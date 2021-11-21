@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: Geometria;
+  background-color: #2C7580;
+  color: #ccc;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: #00FFA9;
+}
+
+.blue {
+  color: blue;
+}
+
+.color {
+  margin: 50px auto;
+  width: 200px;
+
+}
+
+.color__box {
+  display: flex;
+  flex-wrap: wrap;
+  width: 200px;
+  height: 200px;
+  background-color: #000;
+  border: 4px groove gray;
+}
+
+.color__part {
+  width: 50%;
+  height: 50%;
+  padding: 5px;
+}
+
+.color__part:hover {
+  outline: 2px dashed gray;
+  cursor: pointer;
+}
+
+.color__part:nth-child(even) {
+  text-align: right;
+}
+
+/*всплывашюее окно*/
+
+.modal {
+  margin: 50px auto;
+  padding: 5px;
+  width: 200px;
+  border: 4px groove gray;
+}
+
+.modal__row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal__input {
+  margin: 5px; 
+  width: 100px;
+}
+
+.modal__label {
+  margin: 5px;
+  width: 50px;
+  text-align: right;
+}
+
+.modal__text {
+  margin: 5px 0px; 
+  width: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
