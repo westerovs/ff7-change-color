@@ -1,9 +1,15 @@
 const modal = document.querySelector('.modal')
 const box = document.querySelector('.color-box')
 
-const fieldR = modal.querySelector('.modal__label-R')
-const fieldG = modal.querySelector('.modal__label-G')
-const fieldB = modal.querySelector('.modal__label-B')
+const updateValueField = (r, g, b) => {
+  const fieldR = modal.querySelector('.modal__label-R')
+  const fieldG = modal.querySelector('.modal__label-G')
+  const fieldB = modal.querySelector('.modal__label-B')
+  
+  fieldR.innerHTML = r
+  fieldG.innerHTML = g
+  fieldB.innerHTML = b
+}
 
 const rgbArray = [
   {
@@ -51,5 +57,21 @@ const renderColor = () => {
   })
 }
 
-
-modal.addEventListener('change', getValueColor)
+let r = null
+let g = null
+let b = null
+modal.addEventListener('change', function (e) {
+  const targetValue = e.target.value
+  const range = e.target.dataset.range
+  
+  switch (range) {
+    case 'r': r = targetValue
+      break;
+    case 'g': g = targetValue
+      break;
+    case 'b': b = targetValue
+      break;
+  }
+  
+  updateValueField(r, g, b)
+})

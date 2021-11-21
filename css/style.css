@@ -8,7 +8,7 @@
 html,
 body {
   height: 100%;
-  font-family: Geometria;
+  font-family: Geometria, Arial, sans-serif;
   background-color: #2C7580;
   color: #ccc;
 }
@@ -43,6 +43,11 @@ body {
   width: 50%;
   height: 50%;
   padding: 5px;
+}
+
+.color-box__part--active {
+  color: red;
+  font-weight: bold;
 }
 
 .color-box__part:hover {
@@ -80,7 +85,7 @@ body {
 }
 
 .modal__text {
-  margin: 5px 0px;
+  margin: 5px 0;
   width: 50px;
 }
 

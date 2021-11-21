@@ -3,17 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Возьми домой котика">
-  <meta name="keywords" content="меню">
   <link rel="shortcut icon" href="#" type="image/x-icon">
-  <title>ff7</title>
+  <title>ff7 colors</title>
   <link rel="stylesheet" href="css/style.css" >
 </head>
   <body>
 
     <div class="wrapper">
       <div class="color-box">
-        <div class="color-box__part">1</div>
+        <div class="color-box__part color-box__part--active">1</div>
         <div class="color-box__part">2</div>
         <div class="color-box__part">3</div>
         <div class="color-box__part">4</div>
@@ -24,23 +22,22 @@
       <!-- R -->
       <div class="modal__row">
         <p class="modal__text red">R</p>
-        <input class="modal__input" id="modal__input-R" type="range" value="0" max="255">
+        <input data-range="r" class="modal__input" id="modal__input-R" type="range" value="0" max="255">
         <label class="modal__label modal__label-R" for="modal__input-R"></label>
       </div>
       <!-- G -->
       <div class="modal__row">
         <p class="modal__text green">G</p>
-        <input class="modal__input" id="modal__input-G" type="range" value="0" max="255">
+        <input data-range="g" class="modal__input" id="modal__input-G" type="range" value="0" max="255">
         <label class="modal__label modal__label-G" for="modal__input-G"></label>
       </div>
       <!-- B -->
       <div class="modal__row">
         <p class="modal__text blue">B</p>
-        <input class="modal__input" id="modal__input-B" type="range" value="0" max="255">
+        <input data-range="b" class="modal__input" id="modal__input-B" type="range" value="0" max="255">
         <label class="modal__label modal__label-B" for="modal__input-B"></label>
       </div>
     </div>
-
 
     <script src="js/index.js" ></script>
   </body>
