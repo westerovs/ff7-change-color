@@ -1,7 +1,8 @@
-const modal = document.querySelector('.modal')
-const box = document.querySelector('.color-box')
+const modal    = document.querySelector('.modal')
+const colorBox = document.querySelectorAll('.color-box__part')
 
 const updateValueField = (r, g, b) => {
+  console.log(r, g, b)
   const fieldR = modal.querySelector('.modal__label-R')
   const fieldG = modal.querySelector('.modal__label-G')
   const fieldB = modal.querySelector('.modal__label-B')
@@ -14,27 +15,31 @@ const updateValueField = (r, g, b) => {
 const rgbArray = [
   {
     field: {
-      r: 1,
-      g: 2,
-      b: 3,
+      r  : 199,
+      g  : 2,
+      b  : 35,
+      deg: 'to right bottom'
     }
   }, {
     field: {
-      r: 10,
-      g: 10,
-      b: 10,
+      r  : 100,
+      g  : 100,
+      b  : 100,
+      deg: 'to left bottom'
     }
   }, {
     field: {
-      r: 20,
-      g: 20,
-      b: 20,
+      r  : 20,
+      g  : 200,
+      b  : 20,
+      deg: 'to right top'
     }
   }, {
     field: {
-      r: 30,
-      g: 30,
-      b: 30,
+      r  : 30,
+      g  : 30,
+      b  : 130,
+      deg: 'to left top'
     }
   }
 ]
@@ -48,28 +53,33 @@ const getValueColor = (event) => {
 }
 
 const renderColor = () => {
-  rgbArray.find(color => {
-    box.style.backgroundImage = `
-    linear-gradient(to right bottom, rgb(${ color.field.r }, ${ color.field.g }, ${ color.field.b }), transparent 100%),
-    linear-gradient(to left bottom, rgb(${ color.field.r }, ${ color.field.g }, ${ color.field.b }), transparent 100%),
-    linear-gradient(to left top, rgb(${ color.field.r }, ${ color.field.g }, ${ color.field.b }), transparent 50%),
-    linear-gradient(to right top, rgb(${ color.field.r }, ${ color.field.g }, ${ color.field.b }), transparent 100%)`
-  })
+  for (let i = 0; i < rgbArray.length; i++) {
+    console.log(rgbArray[i].field.r)
+    colorBox[i].style.backgroundImage = `
+      linear-gradient(${ rgbArray[i].field.deg }, rgb(${ rgbArray[i].field.r }, ${ rgbArray[i].field.g }, ${ rgbArray[i].field.b }), transparent 100%)`
+  }
 }
 
+renderColor()
+
+// обновить окно rgb text
 let r = null
 let g = null
 let b = null
 modal.addEventListener('change', function (e) {
+  console.log('change')
   const targetValue = e.target.value
-  const range = e.target.dataset.range
+  const range       = e.target.dataset.range
   
   switch (range) {
-    case 'r': r = targetValue
+    case 'r':
+      r = targetValue
       break;
-    case 'g': g = targetValue
+    case 'g':
+      g = targetValue
       break;
-    case 'b': b = targetValue
+    case 'b':
+      b = targetValue
       break;
   }
   
