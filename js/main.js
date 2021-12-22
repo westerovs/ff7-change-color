@@ -1,7 +1,7 @@
 import { clearActiveClass, setActiveClass, getCurrentIndex } from './utils.js';
 import {rgbArray} from './const.js'
 
-const modal    = document.querySelector('.modal')
+const rangeBox = document.querySelector('.rangeBox')
 const colorBox = Array.from(document.querySelectorAll('.color-box__part'))
 
 const checkoutItems = () => {
@@ -14,9 +14,9 @@ const checkoutItems = () => {
 }
 
 const updateValueField = (r, g, b) => {
-  const fieldR = modal.querySelector('.modal__label-R')
-  const fieldG = modal.querySelector('.modal__label-G')
-  const fieldB = modal.querySelector('.modal__label-B')
+  const fieldR = rangeBox.querySelector('.modal__label-R')
+  const fieldG = rangeBox.querySelector('.modal__label-G')
+  const fieldB = rangeBox.querySelector('.modal__label-B')
 
   fieldR.innerHTML = r
   fieldG.innerHTML = g
@@ -43,7 +43,7 @@ const renderColor = (r, g, b) => {
 let r = null
 let g = null
 let b = null
-modal.addEventListener('change', function (e) {
+rangeBox.addEventListener('change', function (e) {
   const targetValue = e.target.value
   const range       = e.target.dataset.range
 

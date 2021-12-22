@@ -61,30 +61,30 @@ body {
 
 /*всплывашюее окно*/
 
-.modal {
+.rangeBox {
   margin: 50px auto;
   padding: 5px;
   width: 200px;
   border: 4px groove gray;
 }
 
-.modal__row {
+.rangeBox__row {
   display: flex;
   justify-content: space-between;
 }
 
-.modal__input {
+.rangeBox__input {
   margin: 5px;
   width: 100px;
 }
 
-.modal__label {
+.rangeBox__label {
   margin: 5px;
   width: 50px;
   text-align: right;
 }
 
-.modal__text {
+.rangeBox__text {
   margin: 5px 0;
   width: 50px;
 }
