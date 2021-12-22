@@ -13,23 +13,19 @@ const checkoutItems = () => {
   })
 }
 
-const updateValueField = (r, g, b) => {
-  const fieldR = rangeBox.querySelector('.modal__label-R')
-  const fieldG = rangeBox.querySelector('.modal__label-G')
-  const fieldB = rangeBox.querySelector('.modal__label-B')
-
-  fieldR.innerHTML = r
-  fieldG.innerHTML = g
-  fieldB.innerHTML = b
-}
-
-
-const getValueColor = (event) => {
-  console.log(event.target)
-
-  const colorValueR = document.querySelector('#modal__input-R').value
-  const colorValueG = document.querySelector('#modal__input-G').value
-  const colorValueB = document.querySelector('#modal__input-B').value
+const getValueColor = () => {
+  // range
+  const colorValueR = document.querySelector('#rangeBox__input-R').value
+  const colorValueG = document.querySelector('#rangeBox__input-G').value
+  const colorValueB = document.querySelector('#rangeBox__input-B').value
+  // label
+  const labelR = document.querySelector('.rangeBox__label-R')
+  const labelG = document.querySelector('.rangeBox__label-G')
+  const labelB = document.querySelector('.rangeBox__label-B')
+  
+  labelR.innerHTML = colorValueR
+  labelG.innerHTML = colorValueG
+  labelB.innerHTML = colorValueB
 }
 
 const renderColor = (r, g, b) => {
@@ -39,37 +35,32 @@ const renderColor = (r, g, b) => {
   }
 }
 
-// обновить окно rgb text
-let r = null
-let g = null
-let b = null
 rangeBox.addEventListener('change', function (e) {
   const targetValue = e.target.value
   const range       = e.target.dataset.range
 
-  console.log(rgbArray[0].field.b)
-
   switch (range) {
     case 'r':
-      r = targetValue
+      // r = targetValue
       rgbArray[0].field.r = +targetValue
       break;
     case 'g':
-      g = targetValue
+      // g = targetValue
       rgbArray[0].field.g = +targetValue
       break;
     case 'b':
-      b = targetValue
+      // b = targetValue
       rgbArray[0].field.b = +targetValue
       break;
-
   }
-
+  
+  getValueColor()
   // updateValueField(r, g, b)
   // renderColor()
 })
 
 const init = () => {
   checkoutItems()
+  getValueColor()
 }
 init()
